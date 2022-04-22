@@ -1,0 +1,13 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+<div class="jumbotron text-center">
+  <h1 style="color: var(--dark)" class="display-4">Thank You!</h1>
+  <p style="color: var(--dark)" class="lead">
+    <strong>Your message is received.We will get back to you shortly!</strong>
+  </p>
+  <hr class="my-4" />
+  <p></p>
+  <a class="btn btn-lg" href="{% url 'home' %}" role="button"
+    >Continue to Homepage</a
+  >
+</div>
+{% endblock content %}

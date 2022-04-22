@@ -1,0 +1,26 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+
+<div class="container text-center box">
+  {% if not obj %}
+  <h1>Upload Image</h1>
+  {% else %}
+  <h1>Your Skin Tone Is:</h1>
+  {% endif %}
+  <form action="" method="post" enctype="multipart/form-data">
+    {% csrf_token %} {{ form.as_p }} {% if not obj %}
+    <button type="submit" class="btn btn-lg">Upload</button>
+    {% endif %}
+  </form>
+  {% if obj %}
+  <h2>"{{result}}"</h2>
+  <img
+    class="card-img"
+    src="{{ obj.image.url}}"
+    alt="image"
+    class="img-thumbnail"
+  />
+  {% endif %}
+  <a href="{% url 'home' %}" class="btn btn-lg">Back to Home</a>
+</div>
+
+{% endblock content %}

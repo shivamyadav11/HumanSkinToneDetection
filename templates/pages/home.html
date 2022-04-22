@@ -1,0 +1,162 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="/">SkinTone</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="/"
+                >Home <span class="sr-only">(current)</span></a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#pricing">Pricing</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">Contact</a>
+            </li>
+            {% if user.is_authenticated %}
+            <li class="nav-item">
+              <a class="nav-link" href="#"><i class="fa fa-user" aria-hidden="true"></i> {{user.username}}</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+            </li>
+            {% else %}
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'login' %}">Login</a>
+            </li>
+            {% endif %}
+          </ul>
+        </div>
+      </nav>
+      <div class="hero container">
+        <div class="hero-text text-center">
+          <h1 class="display-4">
+            Find Your <span class="display-1">skintone</span>
+          </h1>
+          <button onclick="location.href='{% url 'upload' %}'" class="btn">
+            <i class="fa fa-upload"></i> Upload Image
+          </button>
+          <button onclick="location.href='{% url 'camera' %}'" class="btn">
+            <i class="fa fa-camera"></i> Capture Image
+          </button>
+        </div>
+      </div>
+    </header>
+    <section class="pricing dark" id="pricing">
+        <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+            <h2 class="display-4">Pricing</h2>
+            <p class="lead">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam, error.</p>
+          </div>
+        <div class="container">
+            <div class="card-deck mb-3 text-center">
+              <div class="card mb-4 box-shadow">
+                <div class="card-header">
+                  <h4 class="my-0 font-weight-normal">Free</h4>
+                </div>
+                <div class="card-body">
+                  <h1 class="card-title pricing-card-title">$0 <small class="text-muted">/ mo</small></h1>
+                  <ul class="list-unstyled mt-3 mb-4">
+                    <li>BlashBlash</li>
+                    <li>BlashBlash</li>
+                    <li>BlashBlash</li>
+                    <li>BlashBlash</li>
+                  </ul>
+                  {% if user.is_authenticated %}
+                  <a href="#" class="btn btn-lg disabled">Already Sign Up</a>
+                  {% else %}
+                  <a href="{% url 'register' %}" class="btn btn-lg ml-1">Sign up for free</a>
+                  {% endif %}
+                </div>
+              </div>
+              <div class="card mb-4 box-shadow">
+                <div class="card-header">
+                  <h4 class="my-0 font-weight-normal">Pro</h4>
+                </div>
+                <div class="card-body">
+                  <h1 class="card-title pricing-card-title">$15 <small class="text-muted">/ mo</small></h1>
+                  <ul class="list-unstyled mt-3 mb-4">
+                    <li>BlashBlash</li>
+                    <li>BlashBlash</li>
+                    <li>BlashBlash</li>
+                    <li>BlashBlash</li>
+                  </ul>
+                  <a href="#" class="btn btn-lg ml-1">Get started</a>
+                </div>
+              </div>
+              <div class="card mb-4 box-shadow">
+                <div class="card-header">
+                  <h4 class="my-0 font-weight-normal">Enterprise</h4>
+                </div>
+                <div class="card-body">
+                  <h1 class="card-title pricing-card-title">$29 <small class="text-muted">/ mo</small></h1>
+                  <ul class="list-unstyled mt-3 mb-4">
+                    <li>BlashBlash</li>
+                    <li>BlashBlash</li>
+                    <li>BlashBlash</li>
+                    <li>BlashBlash</li>
+                  </ul>
+                  <a href="#contact" type="button" class="btn btn-lg ml-1">Contact us</a>
+                </div>
+              </div>
+            </div>
+    </section>
+    <section class="about light" id="about">
+        <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+            <h2 class="display-4">About</h2>
+            <p class="lead">Hi, This is krish. lorem ipsum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          </div>
+    </section>
+    <section class="contact dark" id="contact">
+        <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+            <h2 class="display-4">Contact Us</h2>
+            <div class="w3-section">
+              <p><i class="fa fa-map-marker fa-fw"></i> Rajasthan, India</p>
+              <p><i class="fa fa-phone fa-fw"></i> Phone: +91 9200965446</p>
+              <p><i class="fa fa-envelope fa-fw"> </i> Email: support.skintone@gmail.com</p>
+            </div>
+            <br>   
+            <p style="margin-bottom: 10px;">Send us a message:</p>
+            <form action="{% url 'contact' %}" method="post">
+              {% csrf_token %}
+              <p><input autocomplete="off" type="text" placeholder="Name" required name="Name" autofocuse></p>
+              <p><input autocomplete="off" type="email" placeholder="Email" required name="Email"></p>
+              <p><input autocomplete="off" type="text" placeholder="Subject" required name="Subject"></p>
+              <p><textarea autocomplete="off" required name="Message" placeholder="message"></textarea></p>
+              <p>
+                <button class="w3-button w3-black w3-padding-large btn" type="submit">
+                  <i class="fa fa-paper-plane"></i> SEND MESSAGE
+                </button>
+              </p>
+            </form>
+          </div>  
+    </section>
+    <footer class="dark">
+        <div class="container text-center">
+            <div class="copy">
+                <p>&copy; 2021 All Rights reserved to<a href="#"> Skintone</a></p>
+              </div>
+              <a href="#" class="top"><i class="fa fa-arrow-circle-up"></i>
+    </div>
+    </footer>
+
+{% endblock content %}

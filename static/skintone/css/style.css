@@ -1,0 +1,322 @@
+:root {
+  --primary: #ffdbac;
+  --secondary: #f1c27d;
+  --mild: #c68642;
+  --skin: #e0ac69;
+  --text: #504c4c;
+  --dark: #8d5524;
+  --black: #1f1d1d;
+  --light: #ebe0d4;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  background: linear-gradient(
+      60deg,
+      rgba(241, 195, 125, 0.4),
+      rgba(241, 195, 125, 0.4)
+    ),
+    url("../img/skinPage.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+  overflow-x: hidden;
+  background-attachment: fixed;
+  background-position: center;
+}
+
+h1,
+h2,
+h4,
+h5,
+h6 {
+  color: var(--light);
+}
+
+p {
+  color: var(--light);
+}
+
+/* ---------------------header------------------------- */
+
+.box {
+  background-color: var(--primary);
+  width: 50%;
+  margin: 100px auto;
+  padding: 50px;
+  border-radius: 5px;
+  box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.3);
+}
+
+.box img {
+  box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.3);
+}
+
+.box h1,
+.box h2,
+.box p {
+  color: #1f1d1d !important;
+}
+.box input {
+  width: 50%;
+  padding: 5px;
+  border-radius: 5px;
+  outline: none;
+}
+
+.hero {
+  position: relative;
+  height: 100vh;
+}
+
+.hero-text {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* ---------------------navbar------------------------- */
+
+.navbar {
+  background: rgba(31, 29, 29, 0.1);
+}
+
+.navbar a {
+  align-items: center;
+  color: var(--primary) !important;
+  padding: 10px auto;
+  padding-right: 50px !important;
+  font-size: 1.2rem;
+  transition: all;
+  transition-duration: 300ms;
+}
+
+.navbar a:hover {
+  color: var(--black) !important;
+}
+
+.navbar-brand {
+  text-align: center;
+  font-size: 1.5rem !important;
+  margin-left: 30px;
+  color: var(--light) !important;
+  border: 2px solid var(--black);
+  border-radius: 50px;
+  padding-left: 50px;
+}
+
+.btn {
+  background-color: var(--black);
+  border-radius: 50px;
+  color: var(--primary);
+  box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.3);
+  padding: 10px 30px;
+  transition: all;
+  transition-duration: 700ms;
+  border: none;
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+.btn:hover {
+  background-color: var(--primary);
+  color: var(--dark);
+  transition-duration: 700ms;
+}
+
+/* ---------------------pricing------------------------------- */
+
+.card {
+  background: var(--primary);
+  border: none;
+  margin: 0 auto;
+}
+
+.dark {
+  background-color: rgba(31, 29, 29, 0.8);
+  padding-bottom: 10px;
+  color: var(--light);
+}
+
+.light {
+  background-color: rgba(198, 134, 66, 0.8);
+}
+
+h4 {
+  color: var(--light);
+}
+
+.card-header {
+  background: var(--mild);
+}
+
+.card-title {
+  color: var(--mild);
+}
+
+.card-body li {
+  color: var(--dark);
+}
+
+.about p {
+  width: 70%;
+  margin: auto;
+  color: var(--light);
+}
+
+.contact p {
+  margin: auto;
+  letter-spacing: 1px;
+  font-weight: lighter;
+  font-size: 1.2rem;
+  color: var(--primary);
+}
+
+.contact input[type="text"],
+.contact input[type="email"] {
+  width: 30%;
+  padding: 8px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  text-align: center;
+  background: var(--light);
+  border-radius: 5px;
+  box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.3);
+}
+.contact input[type="text"]:focus,
+.contact input[type="email"]:focus {
+  background-color: var(--light);
+  outline: none;
+}
+
+textarea {
+  width: 30%;
+  border-radius: 5px;
+  background: var(--light);
+  padding: 8px;
+  height: 100px;
+  border: none;
+  text-align: center;
+  box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.3);
+}
+
+input,
+textarea:focus {
+  outline: none;
+}
+
+footer a {
+  color: var(--primary);
+}
+
+footer a:hover {
+  color: var(--mild);
+  text-decoration: none;
+}
+
+.top {
+  position: fixed;
+  left: 90%;
+  bottom: 70px;
+  font-size: 3rem;
+}
+
+/* ---------------------Sign Up------------------------ */
+
+.global-container {
+  background: linear-gradient(
+      60deg,
+      rgba(241, 195, 125, 0.4),
+      rgba(241, 195, 125, 0.4)
+    ),
+    url("../img/skinPage.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f5f5f5;
+}
+
+form {
+  padding-top: 10px;
+  font-size: 14px;
+  margin-top: 30px;
+}
+
+.card-title {
+  font-weight: 300;
+}
+
+.btn {
+  font-size: 14px;
+  margin-top: 20px;
+}
+
+.login-form {
+  width: 330px;
+  margin: 20px;
+}
+
+.sign-up {
+  text-align: center;
+  padding: 20px 0 0;
+}
+
+.alert {
+  margin-bottom: -30px;
+  font-size: 13px;
+  margin-top: 20px;
+}
+
+.form-group input {
+  text-align: center;
+  padding: 18px;
+  border-radius: 10px;
+  color: var(--text);
+  outline: none;
+}
+
+.global-container div.card {
+  border-radius: 10px;
+}
+
+input:focus {
+  border: none;
+  text-decoration: none;
+}
+
+h3 {
+  color: var(--dark) !important;
+  font-weight: 400 !important;
+}
+
+.link a {
+  color: var(--mild) !important;
+}
+
+@media screen and (max-width: 600px) {
+  .box {
+    width: 90%;
+  }
+  .contact input[type="text"],
+  .contact input[type="email"] {
+    width: 80%;
+  }
+  textarea {
+    width: 80%;
+  }
+}

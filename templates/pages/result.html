@@ -1,0 +1,15 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+
+<div class="container text-center box">
+  <h1>Your Skin Tone Is:</h1>
+  <h2>"{{result}}"</h2>
+  <img
+    class="card-img"
+    src="{{ image.image.url}}"
+    alt="image"
+    class="img-thumbnail"
+  />
+  <a href="{% url 'home' %}" class="btn btn-lg">Back to Home</a>
+</div>
+
+{% endblock content %}

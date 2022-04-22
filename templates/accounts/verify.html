@@ -1,0 +1,31 @@
+{% extends 'base.html' %} {% block content %}
+<div class="global-container">
+  <div class="card login-form">
+    <div class="card-body">
+      <h3 class="card-title text-center">Verify OTP</h3>
+      <div class="card-text">
+        <!--
+			<div class="alert alert-danger alert-dismissible fade show" role="alert">Incorrect username or password.</div> -->
+        <form action="{% url 'verify' %}" method="POST">
+          {% csrf_token %}
+          <!-- to error: add class "has-danger" -->
+          <div class="form-group">
+            <label for="exampleInputOtp">Enter OTP</label>
+            <input
+              type="text"
+              class="form-control form-control-sm"
+              id="exampleInputOtp"
+              aria-describedby="emailHelp"
+              name="auth_otp"
+              required
+            />
+          </div>
+          <div class="form-group text-center">
+            <button type="submit" class="btn ml-1">Verify Now</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock content %}

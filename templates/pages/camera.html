@@ -1,0 +1,25 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+<main id="camera">
+  <canvas id="camera--sensor"></canvas>
+  <video id="camera--view" autoplay playsinline></video>
+  <img src="//:0" alt="" id="camera--output" />
+  <button id="camera--trigger">Take a picture</button>
+  <button id="camera--stop">Exit</button>
+  <form action="{% url 'screenshot' %}" method="post">
+    {% csrf_token %}
+
+    <input type="text" name="id" />
+    <input
+      id="image"
+      type="text"
+      name="image"
+      alt="Submit"
+      width="48"
+      height="48"
+      value=""
+      required
+    />
+    <button id="camera--submit" type="submit">Submit</button>
+  </form>
+</main>
+{% endblock content %}
